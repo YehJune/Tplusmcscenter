@@ -83,6 +83,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
                     Log.d(TAG, "Update Data")
                     applyUI(
                         context!!,
+
                         intent.getStringExtra("data") ?: "-GB",
                         intent.getStringExtra("call") ?: "-분",
                         intent.getStringExtra("sms") ?: "-건",
