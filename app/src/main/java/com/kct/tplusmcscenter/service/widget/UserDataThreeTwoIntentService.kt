@@ -62,12 +62,16 @@ class UserDataThreeTwoIntentService : JobIntentService() {
                     sendBroadcast(
                         Intent(ACTION_UPDATE_DATA).apply {
                             component = ComponentName(applicationContext, SizeThreeTwoAppWidget::class.java)
+                            putExtra("mdn", result.data.body[0].mdn)
                             putExtra("data", result.data.body[0].data)
-                            putExtra("call", result.data.body[0].voice)
+                            putExtra("voice", result.data.body[0].voice)
                             putExtra("sms", result.data.body[0].sms)
                             putExtra("smspercent", result.data.body[0].smspercent)
                             putExtra("voicepercent", result.data.body[0].voicepercent)
                             putExtra("datapercent", result.data.body[0].datapercent)
+                            putExtra("smstot", result.data.body[0].smstot)
+                            putExtra("voicetot", result.data.body[0].voicetot)
+                            putExtra("datatot", result.data.body[0].datatot)
                         }
                     )
                 }

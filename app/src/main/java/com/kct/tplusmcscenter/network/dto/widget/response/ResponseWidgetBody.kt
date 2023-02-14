@@ -13,7 +13,14 @@ data class ResponseWidgetBody(
     val traceno: String,
 
     /**
-     * @param sms String
+     * @param mdn String
+     */
+    @SerializedName("mdn")
+    @Expose
+    val mdn: String,
+
+    /**
+     * @param sms String, Unit: 건
      */
     @SerializedName("sms")
     @Expose
@@ -27,7 +34,7 @@ data class ResponseWidgetBody(
     val voice: String,
 
     /**
-     * @param data String, Unit: MB
+     * @param data String, Unit: GB
      */
     @SerializedName("data")
     @Expose
@@ -52,7 +59,31 @@ data class ResponseWidgetBody(
      */
     @SerializedName("datapercent")
     @Expose
-    val datapercent: Int
+    val datapercent: Int,
+
+    /**
+     * @param smstot String, Unit: 건
+     */
+    @SerializedName("smstot")
+    @Expose
+    val smstot: String,
+
+    /**
+     * @param voicetot String, Unit: 분
+     */
+    @SerializedName("voicetot")
+    @Expose
+    val voicetot: String,
+
+    /**
+     * @param datatot String, Unit: GB
+     */
+    @SerializedName("datatot")
+    @Expose
+    val datatot: String,
+
+
+
 
 
 

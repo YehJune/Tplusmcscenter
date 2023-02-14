@@ -5,89 +5,78 @@
     <!--    style="@style/Widget.Tplusmcscenter.AppWidget.Container"-->
     <!--    android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer"-->
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/three_two_layout_top"
-        style="@style/Widget.Tplusmcscenter.AppWidget.Container2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_height="20dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="-1dp"
-        android:layout_marginEnd="0dp"
         android:background="#e6006b"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer">
         <!--        android:background="#929292"-->
 
         <ImageView
             android:id="@+id/three_two_src_logo"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
             android:src="@drawable/logo_wh" />
 
         <TextView
             android:id="@+id/mobile_num"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
-            android:layout_toStartOf="@+id/three_two_src_refresh"
-            android:layout_toEndOf="@+id/three_two_src_logo"
-            android:text="010-2170-2964"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:text=""
             android:textAlignment="viewStart"
             android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/three_two_src_refresh"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="0dp"
-            android:layout_toStartOf="@+id/three_two_src_home"
-            android:background="@drawable/ic_baseline_refresh_24" />
+            android:textSize="14sp" />
 
         <ImageButton
             android:id="@+id/three_two_src_home"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
             android:layout_marginEnd="0dp"
             android:background="@drawable/ic_baseline_home_24" />
 
-    </RelativeLayout>
+        <ImageButton
+            android:id="@+id/three_two_src_refresh"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="-2dp"
+            android:background="@drawable/ic_baseline_refresh_24" />
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:layout_height="wrap_content"
 
-        android:layout_below="@+id/three_two_layout_top">
+        android:layout_below="@+id/three_two_layout_top"
+        android:layout_marginBottom="0dp"
+        android:background="#ffffff">
 
         <TextView
             android:id="@+id/three_two_text_loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textAlignment="center"
-            android:visibility="gone"
             android:text="사용자 데이터를 불러오는 중입니다."
-            android:textColor="#ffffff"/>
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/three_two_text_error"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textAlignment="center"
-            android:visibility="gone"
             android:text="오류가 발생하였습니다.\n문의 또는 위젯을 다시 설치해주세요"
-            android:textColor="#ffffff"/>
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/three_two_layout_data"
@@ -104,17 +93,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.5"
+                    android:layout_weight="0.4"
                     android:gravity="center_horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
+                        android:layout_gravity="bottom|center"
                         android:text="데이터"
                         android:textColor="#202020"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -132,12 +120,15 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
+                        android:background="#00FFFFFF"
+                        android:fitsSystemWindows="true"
+                        android:indeterminate="false"
                         android:max="100"
                         android:progress="100"
                         android:progressDrawable="@drawable/circle_progressbar"
                         android:progressTint="#ff5158"
-                        android:scaleX="1.5"
-                        android:scaleY="1.5" />
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -149,23 +140,27 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="-3sp"
                             android:text="잔여"
                             android:textColor="#ff5158"
-                            android:textSize="10sp" />
+                            android:textSize="7sp" />
 
                         <TextView
                             android:id="@+id/three_two_text_data"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0MB"
+                            android:layout_marginTop="-5sp"
+                            android:text="0GB"
                             android:textColor="#ff5158"
-                            android:textSize="20sp" />
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/three_two_text_provided_data"
+                            android:id="@+id/three_two_text_datatot"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="제공 0MB"
+                            android:layout_marginTop="-3sp"
+                            android:text="0GB"
                             android:textColor="@color/black"
                             android:textSize="10sp" />
 
@@ -184,17 +179,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.5"
+                    android:layout_weight="0.4"
                     android:gravity="center_horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
+                        android:layout_gravity="bottom|center"
                         android:text="음성"
                         android:textColor="#202020"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -212,12 +206,15 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
+                        android:background="#00FFFFFF"
+                        android:fitsSystemWindows="true"
+                        android:indeterminate="false"
                         android:max="100"
                         android:progress="100"
                         android:progressDrawable="@drawable/circle_progressbar"
                         android:progressTint="#9044d1"
-                        android:scaleX="1.5"
-                        android:scaleY="1.5" />
+                        android:scaleX="1.4"
+                        android:scaleY="1.4" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -229,24 +226,30 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="-3sp"
                             android:text="잔여"
                             android:textColor="#9044d1"
-                            android:textSize="10sp" />
+                            android:textSize="7sp" />
 
                         <TextView
                             android:id="@+id/three_two_text_call"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="-5sp"
                             android:text="0분"
                             android:textColor="#9044d1"
-                            android:textSize="20sp" />
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/three_two_text_provided_call"
+                            android:id="@+id/three_two_text_voicetot"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="제공 0분"
+                            android:layout_marginTop="-3sp"
+                            android:text="0분"
                             android:textColor="@color/black"
-                            android:textSize="10sp" />
+                            android:textSize="10sp"
+                            android:translationZ="-1sp" />
 
                     </LinearLayout>
 
@@ -263,17 +266,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.5"
+                    android:layout_weight="0.4"
                     android:gravity="center_horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:text="SMS"
+                        android:layout_gravity="bottom|center"
+                        android:text="문자"
                         android:textColor="#202020"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -292,22 +294,27 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="-3sp"
                             android:text="잔여"
                             android:textColor="#e6006b"
-                            android:textSize="10sp" />
+                            android:textSize="7sp" />
 
                         <TextView
                             android:id="@+id/three_two_text_sms"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="-5sp"
                             android:text="0건"
                             android:textColor="#e6006b"
-                            android:textSize="20sp" />
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
                         <TextView
-                            android:id="@+id/three_two_text_provided_sms"
+                            android:id="@+id/three_two_text_smstot"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="제공 0건"
+                            android:layout_marginTop="-3sp"
+                            android:text="0건"
                             android:textColor="@color/black"
                             android:textSize="10sp" />
 
@@ -317,17 +324,21 @@
                         android:id="@+id/three_two_progress_sms"
                         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="90dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
+                        android:background="#00FFFFFF"
+                        android:fitsSystemWindows="true"
+                        android:indeterminate="false"
                         android:max="100"
                         android:progress="100"
                         android:progressDrawable="@drawable/circle_progressbar"
                         android:progressTint="#e6006b"
-                        android:scaleX="1.5"
-                        android:scaleY="1.5" />
+                        android:scaleX="1.4"
+                        android:scaleY="1.4"
+                        android:translationZ="-1sp" />
 
                 </RelativeLayout>
 
