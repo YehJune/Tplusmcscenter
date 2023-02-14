@@ -1,0 +1,21 @@
+<resources>
+    <style name="Widget.Tplusmcscenter.AppWidget.Container" parent="android:Widget">
+        <item name="android:id">@android:id/background</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="Widget.Tplusmcscenter.AppWidget.Container2" parent="android:Widget">
+        <item name="android:id">@android:id/background</item>
+        <item name="android:background">#CC929292</item>
+    </style>
+
+    <style name="Widget.Tplusmcscenter.AppWidget.Container3" parent="android:Widget">
+        <item name="android:id">@android:id/background</item>
+        <item name="android:background">#80000000</item>
+    </style>
+
+    <style name="Widget.Tplusmcscenter.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+</resources>

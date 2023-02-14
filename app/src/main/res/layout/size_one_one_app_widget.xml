@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/one_one_layout"
+    style="@style/Widget.Tplusmcscenter.AppWidget.Container3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer"
+
+    android:background="#ffffff"
+    >
+
+    <ImageView
+        android:id="@+id/one_one_src_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_autorenew_24"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/one_one_src_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_error_24"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/one_one_src_data"
+                android:layout_width="5dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_baseline_swap_vert_24" />
+
+            <TextView
+                android:id="@+id/one_one_text_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/test_data"
+                android:textSize="11sp"
+                android:textAlignment="center"
+                android:textColor="#202020"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/one_one_src_call"
+                android:layout_width="5dp"
+                android:layout_height="12dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_call_24"/>
+
+            <TextView
+                android:id="@+id/one_one_text_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/test_call"
+                android:textSize="11sp"
+                android:textAlignment="center"
+                android:textColor="#202020"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/one_one_src_sms"
+                android:layout_width="5dp"
+                android:layout_height="12dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_email_24"/>
+
+            <TextView
+                android:id="@+id/one_one_text_sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/test_sms"
+                android:textSize="11sp"
+                android:textAlignment="center"
+                android:textColor="#202020"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

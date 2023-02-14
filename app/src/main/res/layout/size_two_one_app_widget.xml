@@ -1,0 +1,171 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="#00000000">
+
+<!--    style="@style/Widget.Tplusmcscenter.AppWidget.Container"-->
+<!--    android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer"-->
+
+    <TextView
+        android:id="@+id/two_one_text_loading"
+        style="@style/Widget.Tplusmcscenter.AppWidget.Container"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:text="사용자 데이터를 불러오는 중입니다."
+        android:textColor="#ffffff"
+
+
+        />
+
+    <TextView
+        android:id="@+id/two_one_text_error"
+        style="@style/Widget.Tplusmcscenter.AppWidget.Container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="오류가 발생하였습니다.\n문의 또는 위젯을 다시 설치해주세요"
+        android:textAlignment="center"
+        android:textColor="#202020"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer"
+        android:visibility="gone"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/two_one_layout_data"
+        style="@style/Widget.Tplusmcscenter.AppWidget.Container3"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.AppWidgetContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+
+        android:background="#ffffff"
+        >
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/two_one_src_call"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:src="@drawable/ic_baseline_call_24" />
+
+            <TextView
+                android:id="@+id/two_one_text_call_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/two_one_src_call"
+                android:gravity="center"
+                android:text="0분"
+                android:textColor="#202020"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/two_one_src_sms"
+                android:layout_marginStart="1dp"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_email_24" />
+
+            <TextView
+                android:id="@+id/two_one_text_sms_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/two_one_src_sms"
+                android:gravity="center"
+                android:text="0건"
+                android:textColor="#202020"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/two_one_src_data"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:src="@drawable/ic_baseline_swap_vert_24" />
+
+            <TextView
+                android:id="@+id/two_one_text_data_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/two_one_src_data"
+                android:gravity="center"
+                android:text="0MB"
+                android:textColor="#202020"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/two_one_layout_sub"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#e6006b"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/two_one_src_refresh"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_baseline_refresh_24"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/two_one_src_home"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_baseline_home_24"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
