@@ -128,7 +128,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
 
             setViewVisibility(R.id.three_two_layout_data, View.VISIBLE)
 
-            setTextViewText(R.id.mobile_num, mdn)
+            setTextViewText(R.id.three_two_text_mdn, mdn)
 
             setTextViewText(R.id.three_two_text_call, call)
             setTextViewText(R.id.three_two_text_sms, sms)
@@ -140,7 +140,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
 
             setTextViewText(R.id.three_two_text_voicetot, "$voicetot")
             setTextViewText(R.id.three_two_text_smstot, "$smstot")
-            setTextViewText(R.id.three_two_text_datatot, "100.0GB")
+            setTextViewText(R.id.three_two_text_datatot, "$datatot")
 
             val btnRefreshIntent = Intent(context, SizeThreeTwoAppWidget::class.java)
             btnRefreshIntent.action = WIDGET_BUTTON
