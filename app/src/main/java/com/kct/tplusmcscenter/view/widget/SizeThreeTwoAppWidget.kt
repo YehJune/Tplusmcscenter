@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RemoteViews
@@ -21,7 +22,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
         private fun updateAppWidget(
             context: Context,
             appWidgetManager: AppWidgetManager,
-            appWidgetId: Int
+            appWidgetId: Int,
         ) {
             loadingUI(context)
         }
@@ -43,7 +44,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
     override fun onUpdate(
         context: Context,
         appWidgetManager: AppWidgetManager,
-        appWidgetIds: IntArray
+        appWidgetIds: IntArray,
     ) {
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
@@ -54,6 +55,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         super.onReceive(context, intent)
+
         intent?.let {
             when(it.action) {
                 UserDataThreeTwoIntentService.ACTION_UPDATE_DATA -> {
@@ -66,10 +68,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
                         intent.getStringExtra("sms") ?: "-건",
                         intent.getIntExtra("smspercent",100) ?: 100,
                         intent.getIntExtra("voicepercent",100) ?: 100,
-                        intent.getIntExtra("datapercent",100) ?: 100,
-                        intent.getStringExtra("datatot") ?: "-GB",
-                        intent.getStringExtra("voicetot") ?: "-분",
-                        intent.getStringExtra("smstot") ?: "-건",
+                        intent.getIntExtra("datapercent",100) ?: 100
 
                         )
                 }
@@ -95,6 +94,23 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
         // Enter relevant functionality for when the last widget is disabled
     }
 
+    override fun onAppWidgetOptionsChanged(
+        context: Context?,
+        appWidgetManager: AppWidgetManager?,
+        appWidgetId: Int,
+        newOptions: Bundle?,
+    ) {
+        super.onAppWidgetOptionsChanged(context, appWidgetManager, appWidgetId, newOptions)
+        val minWidth = newOptions?.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH)
+        val maxWidth = newOptions?.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH)
+        val minHeight = newOptions?.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT)
+        val maxHeight = newOptions?.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT)
+        //val maxtextLen = maxWidth / currentTextSize * (maxHeight / currentTextSize)
+
+        //val isFit = maxtextLen > textInWidgetTextView.length()
+
+    }
+
     private fun errorUI(context: Context) {
         val views = RemoteViews(context.packageName, R.layout.size_three_two_app_widget)
         views.run {
@@ -117,9 +133,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
         smspercent:Int,
         voicepercent:Int,
         datapercent:Int,
-        datatot: String,
-        voicetot: String,
-        smstot: String,
+
     ) {
         val views = RemoteViews(context.packageName, R.layout.size_three_two_app_widget)
         views.run {
@@ -138,9 +152,6 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
             setProgressBar(R.id.three_two_progress_sms,100,smspercent,false)
             setProgressBar(R.id.three_two_progress_data,100,datapercent,false)
 
-            setTextViewText(R.id.three_two_text_voicetot, "$voicetot")
-            setTextViewText(R.id.three_two_text_smstot, "$smstot")
-            setTextViewText(R.id.three_two_text_datatot, "$datatot")
 
             val btnRefreshIntent = Intent(context, SizeThreeTwoAppWidget::class.java)
             btnRefreshIntent.action = WIDGET_BUTTON
@@ -156,4 +167,6 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
             views
         )
     }
+
+
 }

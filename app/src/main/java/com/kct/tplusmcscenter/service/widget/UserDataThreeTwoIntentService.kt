@@ -1,8 +1,10 @@
 package com.kct.tplusmcscenter.service.widget
 
+import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import androidx.core.app.JobIntentService
 import com.kct.tplusmcscenter.network.dto.widget.request.RequestWidgetAll
@@ -16,8 +18,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class UserDataThreeTwoIntentService : JobIntentService() {
@@ -69,9 +71,7 @@ class UserDataThreeTwoIntentService : JobIntentService() {
                             putExtra("smspercent", result.data.body[0].smspercent)
                             putExtra("voicepercent", result.data.body[0].voicepercent)
                             putExtra("datapercent", result.data.body[0].datapercent)
-                            putExtra("smstot", result.data.body[0].smstot)
-                            putExtra("voicetot", result.data.body[0].voicetot)
-                            putExtra("datatot", result.data.body[0].datatot)
+
                         }
                     )
                 }
@@ -102,4 +102,6 @@ class UserDataThreeTwoIntentService : JobIntentService() {
             }
         )
     }
+
+
 }
