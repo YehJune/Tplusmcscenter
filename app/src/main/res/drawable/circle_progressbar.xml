@@ -2,11 +2,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/background">
         <shape
-            android:innerRadiusRatio="3.0"
-            android:thicknessRatio="20"
+            android:innerRadiusRatio="3.5"
+            android:thicknessRatio="9"
             android:shape="ring"
             android:useLevel="false"
-            android:type="sweep">
+            android:type="sweep"
+            >
             <solid android:color="#cccccc" />
         </shape>
     </item>
@@ -16,8 +17,8 @@
             android:fromDegrees="270"
             android:toDegrees="270">
             <shape
-                android:innerRadiusRatio="3.0"
-                android:thicknessRatio="20"
+                android:innerRadiusRatio="3.5"
+                android:thicknessRatio="9"
                 android:shape="ring"
                 android:angle="0"
                 android:type="sweep">
