@@ -42,7 +42,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
     }
 
     override fun onUpdate(
-        context: Context,
+    context: Context,
         appWidgetManager: AppWidgetManager,
         appWidgetIds: IntArray,
     ) {
@@ -59,7 +59,7 @@ class SizeThreeTwoAppWidget : AppWidgetProvider() {
         intent?.let {
             when(it.action) {
                 UserDataThreeTwoIntentService.ACTION_UPDATE_DATA -> {
-                    Log.d(TAG, "Update Data")
+                    Log.d(TAG, "Widget Debug:  Update Data")
                     applyUI(
                         context!!,
                         intent.getStringExtra("mdn") ?: "-",

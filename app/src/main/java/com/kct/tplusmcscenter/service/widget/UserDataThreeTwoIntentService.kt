@@ -61,6 +61,8 @@ class UserDataThreeTwoIntentService : JobIntentService() {
         try{
             when (val result = widgetRepository.getWidgetData(request)) {
                 is BaseResult.Success -> {
+                    Log.d(TAG, "Widget Debug: Request success")
+
                     sendBroadcast(
                         Intent(ACTION_UPDATE_DATA).apply {
                             component = ComponentName(applicationContext, SizeThreeTwoAppWidget::class.java)
